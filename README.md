@@ -1,5 +1,5 @@
 # Chromebook-Pixel-2013-Linux
-A collection of scripts to assist with running a Linux distribution natively on the Google CB001 (Codename: Link).
+A collection of scripts and other useful things to assist with running a Linux distribution natively on the Google CB001 (Codename: Link).
 
 ## Files
 - **blacklist.sh** - Script to blacklist module *cros_ec_lpcs* and enable Linux to interract with firmware
