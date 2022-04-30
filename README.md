@@ -2,9 +2,8 @@
 A collection of scripts and other useful things to assist with running a Linux distribution natively on the Google CB001 (Codename: Link).
 
 ## Current Status
-Here's what's working at the moment:
+Here's what's working at the moment testing Ubuntu 22.04, Ubuntu MATE 22.04, Fedora 35:
 
-- Ubuntu 22.04, Ubuntu MATE 22.04, Fedora 35
 - WiFi
 - Bluetooth
 - Suspend/Hibernate
@@ -14,11 +13,6 @@ Here's what's working at the moment:
 - Display touchscreen
 - Sound
 - Keyboard backlight
-
-Workarounds:
-
-- Ubuntu MATE Keyboard Shortcuts <br/>_Intermittently forgetting custom keyboard shortcuts at boot_
-- WiFi
 
 ## Files
 - **blacklist.sh** - Script to blacklist module *cros_ec_lpcs* and enable Linux to interract with firmware
@@ -61,5 +55,7 @@ _NOTE: For some reason the driver will not accept a value <1, so 1% brightness i
 `sudo pkexec bash -c 'echo -n 0 > /sys/class/leds/chromeos::kbd_backlight/brightness'`
 
 ## Help
+
+- Ubuntu MATE 22.04 Keyboard Shortcuts and Media Keys not working (or working intermittently)<br/>Run the following command: <br/><br/>`killall mate-settings-daemon && mate-settings-daemon` <br/><br/>_I dont know why this is happening (I suspect mate-settings-daemon and gnome-settings-daemon are interfering with eachother at login) but it can be fixed by reloading the settings-daemon and adding as a new startup entry_
 
 ### Goodbye!
