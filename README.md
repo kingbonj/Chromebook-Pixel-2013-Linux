@@ -56,7 +56,7 @@ _NOTE: For some reason the driver will not accept a value <1, so 1% brightness i
 
 `sudo pkexec bash -c 'echo -n 0 > /sys/class/leds/chromeos::kbd_backlight/brightness'`
 
-## Help
+## Help and Troubleshooting
 
 - Ubuntu MATE 22.04 Keyboard Shortcuts and Media Keys not working (or working intermittently)<br/>Run the following command: <br/><br/>`killall mate-settings-daemon && mate-settings-daemon` <br/><br/>_I dont know why this is happening (I suspect mate-settings-daemon and gnome-settings-daemon are interfering with eachother at login) but it can be fixed by reloading the settings-daemon and adding as a new startup entry_
 
