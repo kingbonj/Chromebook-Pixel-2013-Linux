@@ -5,7 +5,7 @@ A collection of scripts and other useful things to assist with running a Linux d
 Here's what's working at the moment testing Ubuntu 22.04, Ubuntu MATE 22.04, Fedora 35:
 
 - WiFi
-- Bluetooth
+- Bluetoothp using the command above
 - Suspend/Hibernate
 - Touchpad
 - Display HDPI
@@ -13,6 +13,8 @@ Here's what's working at the moment testing Ubuntu 22.04, Ubuntu MATE 22.04, Fed
 - Display touchscreen
 - Sound
 - Keyboard backlight
+- Power Management 
+- Fan Control (automated)
 
 ## Files
 - **blacklist.sh** - Script to blacklist module *cros_ec_lpcs* and enable Linux to interract with firmware
@@ -24,7 +26,7 @@ Here's what's working at the moment testing Ubuntu 22.04, Ubuntu MATE 22.04, Fed
 2. Installed latest *"Full ROM"* firmware from MrChromebox (https://mrchromebox.tech/#fwscript)
 3. OS of choice installed via USB (tested only with Ubuntu Mate 22.04 LTS)
 
-## Firmware Drivers
+## Blacklisting the Chromeos Embedded Controller
 This can be done using the **blacklist.sh** script:
 
 1. Download file **blacklist.sh**
@@ -57,5 +59,13 @@ _NOTE: For some reason the driver will not accept a value <1, so 1% brightness i
 ## Help
 
 - Ubuntu MATE 22.04 Keyboard Shortcuts and Media Keys not working (or working intermittently)<br/>Run the following command: <br/><br/>`killall mate-settings-daemon && mate-settings-daemon` <br/><br/>_I dont know why this is happening (I suspect mate-settings-daemon and gnome-settings-daemon are interfering with eachother at login) but it can be fixed by reloading the settings-daemon and adding as a new startup entry_
+
+- No Sound from Headphones: <br/><br/>Run `alsamixer` from terminal and use the `M` key to unmute the output
+
+- Poor Battery Performance:  <br/><br/>Install `tlp` and either reboot or run `sudo tlp start`
+
+- No Fans and High Temperature: <br/><br/>Install `lm-sensors` and run `sudo sensors-detect`. Also check that **cros_ec_lpcs** is properly blacklisted by running `lsmod | grep cros_ec_lpcs` (It should not show any output)
+
+- High Fan Speed: <br/><br/>Firstly check output of `top` to rule out any rogue applications eating your CPU or Memory resources. Failing that it seems to be OS-specific, and depends upon whether your X session is rendering using software or the integrated GPU. You can try using using an alternative compositor or playing about with the compositor settings. It's trial and error but my system is consistently cool and stable under heavy loads using the _'Marco built-in Xpresent'_ profile. 
 
 ### Goodbye!
