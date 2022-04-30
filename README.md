@@ -66,6 +66,6 @@ _NOTE: For some reason the driver will not accept a value <1, so 1% brightness i
 
 - No Fans and High Temperature: <br/><br/>Install `lm-sensors` and run `sudo sensors-detect`. Also check that **cros_ec_lpcs** is properly blacklisted by running `lsmod | grep cros_ec_lpcs` (It should not show any output)
 
-- High Fan Speed: <br/><br/>Firstly check output of `top` to rule out any rogue applications eating your CPU or Memory resources. Failing that it seems to be OS-specific, and depends upon whether your X session is rendering using software or the integrated GPU. You can try using using an alternative compositor or playing about with the compositor settings. It's trial and error but my system is consistently cool and stable under heavy loads using the _'Marco built-in Xpresent'_ profile. 
+- High Fan Speed: <br/><br/>Firstly check output of `top` to rule out any rogue applications eating your CPU or Memory resources. Failing that it seems to be OS-specific, and depends upon X-session rendering. You can try using using an alternative compositor or playing about with the compositor settings to reduce GPU/CPU strain. It's trial and error with this one but my system is consistently cool and stable under heavy loads using the _'Marco built-in Xpresent'_ profile in MATE 22.04. 
 
 ### Goodbye!
