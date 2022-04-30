@@ -39,7 +39,7 @@ Or alternatively you can blacklist the module manually (example using nano text 
 2. Add the following line to the code:
    `cros_ec_lpcs`
 3. Update initramfs:
-   `update iniframfs -u` 
+   `update initramfs -u` 
 4. Reboot the system
 
 ## Setting Keyboard LED brightness
