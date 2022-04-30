@@ -35,7 +35,7 @@ then
     then
 #   If not blacklisted >
         printf "\nAppending module \e[33mcros_ec_lpcs\e[0m to blacklist configuration file..."
-        printf "cros_ec_lpcs" >> blacklist.conf
+        printf "\ncros_ec_lpcs" >> blacklist.conf
         printf "Done\n"
         printf "Updating initramfs..."
         update-initramfs -u
